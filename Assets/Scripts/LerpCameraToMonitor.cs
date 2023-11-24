@@ -5,78 +5,83 @@ using UnityEngine.Events;
 
 public class LerpCameraToMonitor : MonoBehaviour
 {
-    public Transform Target;
-    private Vector3 Oldpos;
-    private Quaternion Oldrot;
-    public float LerpTime;
-    private float _lerpCounter;
-    private bool _startedLerpIntoMonitor = false;
-    private bool _startedLerpIntoCamera = false;
-    public UnityEvent OnFirstLerpEnded;
-    public UnityEvent OnSecondLerpEnded;
+    [SerializeField] private Transform _monitorTarget;
+
+    private Vector3 _startPos;
+    private Quaternion _startRot;
+
+    [SerializeField] private float _lerpTimer;
+    [SerializeField] private float _lerpCounter;
+    private bool _isLerping = false;
+    private bool _isGoingForward = false;
+
+    public UnityEvent OnStartLerp,OnLerpEndGoingForward,OnlerpEndGoingBackward;
 
     void Start()
     {
-        Oldpos = transform.position;
-        Oldrot = transform.rotation;
+        _startPos = transform.position;
+
+        OnStartLerp.AddListener(() => {
+                                        _isLerping = true;
+                                        Cursor.visible = false;
+                                        Cursor.lockState = CursorLockMode.Locked;
+        });
+
+        OnLerpEndGoingForward.AddListener(() => { Cursor.visible = true; Cursor.lockState = CursorLockMode.Confined; });
 
     }
 
     void Update()
     {
-        LerpIntoMonitor();
-        LerpIntoCamera();
-    }
-
-    private void LerpIntoMonitor()
-    {
-        if (Input.GetKeyDown(KeyCode.A) & !_startedLerpIntoMonitor)
+        if (_isLerping) 
         {
-            Oldrot = transform.rotation;
-            _lerpCounter = 0;
-            _startedLerpIntoMonitor = true;
-        }
-
-        if (_startedLerpIntoMonitor)
-        {
-            OnFirstLerpEnded.Invoke();
-
-            transform.position = Vector3.Lerp(Oldpos, Target.position, _lerpCounter / LerpTime);
-            transform.rotation = Quaternion.Slerp(Oldrot, Target.rotation, _lerpCounter / LerpTime);
-
             _lerpCounter += Time.deltaTime;
+            LerpCameraFlipFlop();
+            return;
+        }
 
-            if (_lerpCounter > LerpTime)
-            {
-                _startedLerpIntoMonitor = false;
-                _lerpCounter = 0;
-            }
+        if (Input.GetKeyDown(KeyCode.A) && !_isGoingForward)
+        {
+            _startRot = transform.rotation;
+            StartLerping(true);
+
+        }
+        else if (Input.GetKeyDown(KeyCode.D) && _isGoingForward)
+        {
+            StartLerping(false);
         }
     }
 
-    private void LerpIntoCamera()
+    public void StartLerping(bool isGoingForward)
     {
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            _lerpCounter = 0;
-            _startedLerpIntoCamera = true;
-        }
-
-        if (_startedLerpIntoCamera)
-        {
-            transform.position = Vector3.Lerp(Target.position, Oldpos, _lerpCounter / LerpTime);
-            transform.rotation = Quaternion.Slerp(Target.rotation, Oldrot, _lerpCounter / LerpTime);
-
-            _lerpCounter += Time.deltaTime;
-
-            if (_lerpCounter > LerpTime)
-            {
-                _startedLerpIntoCamera = false;
-                _lerpCounter = 0;
-                OnSecondLerpEnded.Invoke();
-            }
-        }
-
+        OnStartLerp.Invoke();
+        _isGoingForward = isGoingForward;
     }
-        
+
+    private void LerpCameraFlipFlop()
+    {
+        if (_isGoingForward)
+        {
+            LerpCamera(_startPos, _startRot, _monitorTarget.position, _monitorTarget.rotation);
+        }
+        else
+        {
+            LerpCamera(_monitorTarget.position, _monitorTarget.rotation, _startPos, _startRot);
+        }
+    }
+
+    private void LerpCamera(Vector3 fromPos, Quaternion fromRot, Vector3 toPos, Quaternion toRot)
+    {
+        transform.position = Vector3.Lerp(fromPos, toPos, _lerpCounter / _lerpTimer);
+        transform.rotation = Quaternion.Slerp(fromRot, toRot, _lerpCounter / _lerpTimer);        
+
+        if (_lerpCounter > _lerpTimer)
+        {
+            _isLerping = false;
+            _lerpCounter = 0;
+
+            if (_isGoingForward) OnLerpEndGoingForward.Invoke();
+            else OnlerpEndGoingBackward.Invoke();
+        }
+    }        
 }

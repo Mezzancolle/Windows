@@ -5,30 +5,26 @@ using UnityEngine.Rendering;
 
 public class LookAround : MonoBehaviour
 {
-    private float _rotationX = 0f;
-    private float _rotationY = 0f;
-    public float Sensitivity = 400f;
+    [SerializeField] private float _rotationX = 0f;
+    [SerializeField] private float _rotationY = 0f;
 
-    public float MinClampX;
-    public float MaxClampX;
-    public float MinClampY;
-    public float MaxClampY;
+    [SerializeField] private float _sensitivity = 400f;
 
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-    }
+    [SerializeField] private float _minClampX;
+    [SerializeField] private float _maxClampX;
+    [SerializeField] private float _minClampY;
+    [SerializeField] private float _maxClampY;
 
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * Sensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * Sensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxisRaw("Mouse X") * _sensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * _sensitivity * Time.deltaTime;
 
         _rotationY += mouseX;
         _rotationX -= mouseY;
 
-        _rotationX = Mathf.Clamp(_rotationX, MinClampX, MaxClampX);
-        _rotationY = Mathf.Clamp(_rotationY, MinClampY, MaxClampY);
+        _rotationX = Mathf.Clamp(_rotationX, _minClampX, _maxClampX);
+        _rotationY = Mathf.Clamp(_rotationY, _minClampY, _maxClampY);
 
         transform.rotation = Quaternion.Euler(_rotationX, _rotationY, 0);
 
