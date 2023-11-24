@@ -7,6 +7,7 @@ TagManager:
   - LIGHTSOURCE
   - Terreno
   - Persone
+  - Selectable
   layers:
   - Default
   - TransparentFX
