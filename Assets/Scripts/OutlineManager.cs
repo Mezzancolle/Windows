@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class OutlineManager : MonoBehaviour
 {
+    [SerializeField]
     public MeshRenderer m_Renderer;
-    public Material OriginalMaterial;
-    public Material MouseOvercolor;
+    [SerializeField]
+    public Material _originalMaterial, _outlineColor;
 
     private void Start()
     {
-        m_Renderer.material = OriginalMaterial;
+        m_Renderer.material = _originalMaterial;
     }
 
     void OnMouseOver()
     {
-        m_Renderer.material = MouseOvercolor;
+        m_Renderer.material = _outlineColor;
     }
 
     void OnMouseExit()
     {
-        m_Renderer.material = OriginalMaterial;
+        m_Renderer.material = _originalMaterial;
     }
 }
