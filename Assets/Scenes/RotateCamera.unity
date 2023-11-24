@@ -475,6 +475,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sensitivity: 800
+  ClampA: -90
+  ClampB: 90
 --- !u!1 &2007858745
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class LookAround : MonoBehaviour
 {
     private float _rotationX = 0f;
     private float _rotationY = 0f;
     public float Sensitivity = 400f;
+
+    public float ClampA;
+    public float ClampB;
 
     void Start()
     {
@@ -22,8 +26,8 @@ public class LookAround : MonoBehaviour
         _rotationY += mouseX;
         _rotationX -= mouseY;
 
-        _rotationX = math.clamp(_rotationX, -90f, 90f);
-        _rotationY = math.clamp(_rotationY, -90f, 90f);
+        _rotationX = math.clamp(_rotationX, ClampA, ClampB);
+        _rotationY = math.clamp(_rotationY, ClampA, ClampB);
 
         transform.rotation = Quaternion.Euler(_rotationX, _rotationY, 0);
 
