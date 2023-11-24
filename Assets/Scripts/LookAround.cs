@@ -14,11 +14,6 @@ public class LookAround : MonoBehaviour
     public float MinClampY;
     public float MaxClampY;
 
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-    }
-
     void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * Sensitivity * Time.deltaTime;

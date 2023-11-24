@@ -394,6 +394,8 @@ GameObject:
   - component: {fileID: 207665002}
   - component: {fileID: 207665001}
   - component: {fileID: 207665004}
+  - component: {fileID: 207665005}
+  - component: {fileID: 207665006}
   m_Layer: 0
   m_Name: NPC (3)
   m_TagString: Untagged
@@ -459,6 +461,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 10a0b1d6a8ebfb1408845126f443a4c4, type: 2}
+  - {fileID: 2100000, guid: 10a0b1d6a8ebfb1408845126f443a4c4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -503,6 +506,44 @@ MonoBehaviour:
   agent: {fileID: 207665001}
   range: 40
   centrePoint: {fileID: 207665000}
+--- !u!114 &207665005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207664999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1c7ab12d851264c880729e7a6b0005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Renderer: {fileID: 207665002}
+  OriginalMaterial: {fileID: 2100000, guid: 10a0b1d6a8ebfb1408845126f443a4c4, type: 2}
+  MouseOvercolor: {fileID: 2100000, guid: 5a630ef75ec7ffb4088caa979737cdb5, type: 2}
+--- !u!136 &207665006
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207664999}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &214361094
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,6 +1028,8 @@ GameObject:
   - component: {fileID: 422335182}
   - component: {fileID: 422335181}
   - component: {fileID: 422335184}
+  - component: {fileID: 422335185}
+  - component: {fileID: 422335186}
   m_Layer: 0
   m_Name: NPC (2)
   m_TagString: Untagged
@@ -1052,6 +1095,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 10a0b1d6a8ebfb1408845126f443a4c4, type: 2}
+  - {fileID: 2100000, guid: 10a0b1d6a8ebfb1408845126f443a4c4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1096,6 +1140,44 @@ MonoBehaviour:
   agent: {fileID: 422335181}
   range: 40
   centrePoint: {fileID: 422335180}
+--- !u!114 &422335185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422335179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1c7ab12d851264c880729e7a6b0005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Renderer: {fileID: 422335182}
+  OriginalMaterial: {fileID: 2100000, guid: 10a0b1d6a8ebfb1408845126f443a4c4, type: 2}
+  MouseOvercolor: {fileID: 2100000, guid: 5a630ef75ec7ffb4088caa979737cdb5, type: 2}
+--- !u!136 &422335186
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422335179}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &460444957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,6 +1425,128 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607321785}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &647230957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 647230962}
+  - component: {fileID: 647230961}
+  - component: {fileID: 647230960}
+  - component: {fileID: 647230959}
+  - component: {fileID: 647230958}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &647230958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647230957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1c7ab12d851264c880729e7a6b0005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Renderer: {fileID: 647230960}
+  OriginalMaterial: {fileID: 2100000, guid: 10a0b1d6a8ebfb1408845126f443a4c4, type: 2}
+  MouseOvercolor: {fileID: 2100000, guid: 5a630ef75ec7ffb4088caa979737cdb5, type: 2}
+--- !u!65 &647230959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647230957}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &647230960
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647230957}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &647230961
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647230957}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &647230962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647230957}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.85, y: 0.5, z: 8.62}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &719563121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1474,6 +1678,8 @@ GameObject:
   - component: {fileID: 741725413}
   - component: {fileID: 741725412}
   - component: {fileID: 741725415}
+  - component: {fileID: 741725416}
+  - component: {fileID: 741725417}
   m_Layer: 0
   m_Name: NPC (4)
   m_TagString: Untagged
@@ -1539,6 +1745,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 10a0b1d6a8ebfb1408845126f443a4c4, type: 2}
+  - {fileID: 2100000, guid: 10a0b1d6a8ebfb1408845126f443a4c4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1583,6 +1790,44 @@ MonoBehaviour:
   agent: {fileID: 741725412}
   range: 40
   centrePoint: {fileID: 741725411}
+--- !u!114 &741725416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741725410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1c7ab12d851264c880729e7a6b0005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Renderer: {fileID: 741725413}
+  OriginalMaterial: {fileID: 2100000, guid: 10a0b1d6a8ebfb1408845126f443a4c4, type: 2}
+  MouseOvercolor: {fileID: 2100000, guid: 5a630ef75ec7ffb4088caa979737cdb5, type: 2}
+--- !u!136 &741725417
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741725410}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &755892350
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,6 +2448,8 @@ GameObject:
   - component: {fileID: 1184967680}
   - component: {fileID: 1184967679}
   - component: {fileID: 1184967682}
+  - component: {fileID: 1184967683}
+  - component: {fileID: 1184967684}
   m_Layer: 0
   m_Name: NPC (5)
   m_TagString: Untagged
@@ -2268,6 +2515,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 10a0b1d6a8ebfb1408845126f443a4c4, type: 2}
+  - {fileID: 2100000, guid: 10a0b1d6a8ebfb1408845126f443a4c4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2312,6 +2560,44 @@ MonoBehaviour:
   agent: {fileID: 1184967679}
   range: 40
   centrePoint: {fileID: 1184967678}
+--- !u!114 &1184967683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184967677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1c7ab12d851264c880729e7a6b0005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Renderer: {fileID: 1184967680}
+  OriginalMaterial: {fileID: 2100000, guid: 10a0b1d6a8ebfb1408845126f443a4c4, type: 2}
+  MouseOvercolor: {fileID: 2100000, guid: 5a630ef75ec7ffb4088caa979737cdb5, type: 2}
+--- !u!136 &1184967684
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184967677}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1244924242
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,6 +2959,8 @@ GameObject:
   - component: {fileID: 1410146360}
   - component: {fileID: 1410146359}
   - component: {fileID: 1410146362}
+  - component: {fileID: 1410146363}
+  - component: {fileID: 1410146364}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -2738,6 +3026,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2782,6 +3071,44 @@ MonoBehaviour:
   agent: {fileID: 1410146359}
   range: 40
   centrePoint: {fileID: 1410146358}
+--- !u!114 &1410146363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410146357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1c7ab12d851264c880729e7a6b0005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Renderer: {fileID: 1410146360}
+  OriginalMaterial: {fileID: 2100000, guid: 10a0b1d6a8ebfb1408845126f443a4c4, type: 2}
+  MouseOvercolor: {fileID: 2100000, guid: 5a630ef75ec7ffb4088caa979737cdb5, type: 2}
+--- !u!136 &1410146364
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410146357}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1444773072
 GameObject:
   m_ObjectHideFlags: 0
@@ -2795,6 +3122,8 @@ GameObject:
   - component: {fileID: 1444773075}
   - component: {fileID: 1444773074}
   - component: {fileID: 1444773077}
+  - component: {fileID: 1444773078}
+  - component: {fileID: 1444773079}
   m_Layer: 0
   m_Name: NPC (1)
   m_TagString: Untagged
@@ -2860,6 +3189,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 10a0b1d6a8ebfb1408845126f443a4c4, type: 2}
+  - {fileID: 2100000, guid: 10a0b1d6a8ebfb1408845126f443a4c4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2904,6 +3234,44 @@ MonoBehaviour:
   agent: {fileID: 1444773074}
   range: 40
   centrePoint: {fileID: 1444773073}
+--- !u!114 &1444773078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444773072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1c7ab12d851264c880729e7a6b0005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Renderer: {fileID: 1444773075}
+  OriginalMaterial: {fileID: 2100000, guid: 10a0b1d6a8ebfb1408845126f443a4c4, type: 2}
+  MouseOvercolor: {fileID: 2100000, guid: 5a630ef75ec7ffb4088caa979737cdb5, type: 2}
+--- !u!136 &1444773079
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444773072}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1524080972
 GameObject:
   m_ObjectHideFlags: 0
@@ -3551,3 +3919,4 @@ SceneRoots:
   - {fileID: 2105852386}
   - {fileID: 1335830313}
   - {fileID: 1590418948}
+  - {fileID: 647230962}
