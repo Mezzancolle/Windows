@@ -7,7 +7,7 @@ public class LookAround : MonoBehaviour
 {
     private float _rotationX = 0f;
     private float _rotationY = 0f;
-    public float Sensitivity = 400f;
+    public float Sensitivity = 0f;
 
     public float MinClampX;
     public float MaxClampX;
@@ -16,11 +16,11 @@ public class LookAround : MonoBehaviour
 
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * Sensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * Sensitivity * Time.deltaTime;
+        float X = Input.GetAxis("Horizontal") * Sensitivity * Time.deltaTime;
+        float Y = Input.GetAxis("Vertical") * Sensitivity * Time.deltaTime;
 
-        _rotationY += mouseX;
-        _rotationX -= mouseY;
+        _rotationY += X;
+        _rotationX -= Y;
 
         _rotationX = Mathf.Clamp(_rotationX, MinClampX, MaxClampX);
         _rotationY = Mathf.Clamp(_rotationY, MinClampY, MaxClampY);

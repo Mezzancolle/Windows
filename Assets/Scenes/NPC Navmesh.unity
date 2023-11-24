@@ -694,7 +694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64b2d1d116cda44099b9686f4e00955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sensitivity: 200
+  Sensitivity: 25
   MinClampX: -13
   MaxClampX: 77
   MinClampY: -277
@@ -2083,7 +2083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64b2d1d116cda44099b9686f4e00955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sensitivity: 200
+  Sensitivity: 25
   MinClampX: -13
   MaxClampX: 77
   MinClampY: -169
