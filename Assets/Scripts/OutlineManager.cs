@@ -5,7 +5,7 @@ using UnityEngine;
 public class OutlineManager : MonoBehaviour
 {
     [SerializeField]
-    private MeshRenderer m_Renderer;
+    private SkinnedMeshRenderer m_Renderer;
     [SerializeField]
     private Material _originalMaterial, _outlineColor;
     [SerializeField]
@@ -13,12 +13,13 @@ public class OutlineManager : MonoBehaviour
     [SerializeField]
     private bool Enemy;
 
-    private NPCManager NPCManager;
+    static private NPCManager NPCManager;
 
     private void Start()
     {
-        m_Renderer.material = _originalMaterial;
-        NPCManager = FindObjectOfType<NPCManager>();
+        _originalMaterial = m_Renderer.material;
+
+        if(!NPCManager) NPCManager = FindObjectOfType<NPCManager>();
     }
 
     void OnMouseOver()
