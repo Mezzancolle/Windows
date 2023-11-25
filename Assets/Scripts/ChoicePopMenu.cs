@@ -7,15 +7,8 @@ public class ChoicePopMenu : MonoBehaviour
 {
     [SerializeField]
     private GameObject _popupMessage;
+    public GameObject NPC;
 
-    private GameObject _npc;
-    private GameObject _lastNpcCalled;
-
-    private void Start()
-    {
-
-        GameObject _lastNpcCalled = _npc.GetComponent<GameObject>();
-    }
 
     public void LeftButtonPressed()
     {
@@ -25,7 +18,7 @@ public class ChoicePopMenu : MonoBehaviour
     public void RightButtonPressed()
     {
         _popupMessage.SetActive(false);
-        Destroy(_lastNpcCalled);
+        Destroy(NPC);
 
     }
 
