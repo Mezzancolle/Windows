@@ -10,6 +10,16 @@ public class NPCManager : MonoBehaviour
     private int _civiliansKilled;
     private int _maxEnemiesKillable = 2;
     private int _maxCivilianKillable = 2;
+    private float _countDownTimer = 5f;
+
+    private void Update()
+    {
+        _countDownTimer -= Time.deltaTime;
+        if (_countDownTimer <= 0)
+        {
+            ResetScene();
+        }
+    }
 
     public void IncrementKilledEnemies()
     {
