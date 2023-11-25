@@ -10,10 +10,15 @@ public class OutlineManager : MonoBehaviour
     private Material _originalMaterial, _outlineColor;
     [SerializeField]
     private GameObject _popupMessage;
+    [SerializeField]
+    private bool Enemy;
+
+    private NPCManager NPCManager;
 
     private void Start()
     {
         m_Renderer.material = _originalMaterial;
+        NPCManager = FindObjectOfType<NPCManager>();
     }
 
     void OnMouseOver()
@@ -29,5 +34,17 @@ public class OutlineManager : MonoBehaviour
     private void OnMouseDown()
     {
         _popupMessage.SetActive(true);
+    }
+
+    private void OnDestroy()
+    {
+        if (Enemy)
+        {
+            NPCManager.IncrementKilledEnemies();
+        }
+        else
+        {
+            NPCManager.IncrementKilledCivilians();
+        }
     }
 }
