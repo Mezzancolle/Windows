@@ -5,9 +5,11 @@ using UnityEngine;
 public class OutlineManager : MonoBehaviour
 {
     [SerializeField]
-    public MeshRenderer m_Renderer;
+    private MeshRenderer m_Renderer;
     [SerializeField]
-    public Material _originalMaterial, _outlineColor;
+    private Material _originalMaterial, _outlineColor;
+    [SerializeField]
+    private GameObject _popupMessage;
 
     private void Start()
     {
@@ -22,5 +24,10 @@ public class OutlineManager : MonoBehaviour
     void OnMouseExit()
     {
         m_Renderer.material = _originalMaterial;
+    }
+
+    private void OnMouseDown()
+    {
+        _popupMessage.SetActive(true);
     }
 }
