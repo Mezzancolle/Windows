@@ -6,18 +6,11 @@ using UnityEngine.AI; //important
 //if you use this code you are contractually obligated to like the YT video
 public class RandomMovementIdle : MonoBehaviour //don't forget to change the script name if you haven't
 {
-    private NavMeshAgent agent;
+    [SerializeField] private NavMeshAgent agent;
     private float range = 20; //radius of sphere
 
     private float idleTimer = 3f, idleCounter = 0f;
-    private Animator myAnimator;
-
-    void Start()
-    {
-        agent = GetComponent<NavMeshAgent>();
-        myAnimator = GetComponent<Animator>();
-    }
-
+    [SerializeField] private Animator myAnimator;
 
     void Update()
     {
