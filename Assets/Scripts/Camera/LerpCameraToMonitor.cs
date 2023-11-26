@@ -39,23 +39,17 @@ public class LerpCameraToMonitor : MonoBehaviour
             LerpCameraFlipFlop();
             return;
         }
-
-        if (Input.GetKeyDown(KeyCode.A) && !_isGoingForward)
-        {
-            _startRot = transform.rotation;
-            StartLerping(true);
-
-        }
-        else if (Input.GetKeyDown(KeyCode.D) && _isGoingForward)
-        {
-            StartLerping(false);
-        }
     }
 
     public void StartLerping(bool isGoingForward)
     {
+        if (isGoingForward == _isGoingForward) return;
+
         OnStartLerp.Invoke();
+
         _isGoingForward = isGoingForward;
+
+        if(isGoingForward) _startRot = transform.rotation;
     }
 
     private void LerpCameraFlipFlop()

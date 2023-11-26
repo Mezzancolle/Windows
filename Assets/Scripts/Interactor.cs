@@ -5,69 +5,27 @@ using UnityEngine.UI;
 
 public class Interactor : MonoBehaviour
 {
-    [SerializeField] private LayerMask obsevableLayerMask;
-    [SerializeField] private float maxDistance;
-    //private RaycastHit hit;
-    [SerializeField] private Image observableImage;
+    [SerializeField] private LayerMask interactableLayerMask;
+    [SerializeField] private float maxDistance;    
+    private RaycastHit hit;
+    [SerializeField] private Image interactorImage;
     [SerializeField] private Sprite defaultIcon;
     [SerializeField] private Sprite interactIcon;
 
-    //void FixedUpdate()
-    //{
-    //    //Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * maxDistance, Color.red);
-
-    //    //if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, maxDistance, obsevableLayerMask))
-    //    //{
-    //    //    RaycastController(hit);
-    //    //    Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * maxDistance, Color.green);
-    //    //}
-
-    //    hits = Physics.RaycastAll(Camera.main.transform.position, Camera.main.transform.forward, maxDistance, obsevableLayerMask, QueryTriggerInteraction.UseGlobal);
-    //}
-
-    //private void Update()
-    //{
-    //    if (hits.Length > 0)
-    //    {
-    //        observableImage.sprite = interactIcon;
-
-    //        foreach (RaycastHit hit in hits)
-    //        {
-    //            ObservableCheck(hit);
-    //            InteractableCheck(hit);
-    //        }
-    //    }
-    //    else if (observableImage.sprite != defaultIcon)
-    //    {
-    //        observableImage.sprite = defaultIcon;
-    //    }
-    //}
-
-    void ObservableCheck(RaycastHit hit)
+    private void Update()
     {
-        Interactable observable = hit.collider.GetComponent<Interactable>();
+        Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, maxDistance, interactableLayerMask);
 
-        if (observable != null)
+        if (hit.collider)
         {
-            observable.onInteract.Invoke();
+            interactorImage.sprite = interactIcon;
         }
-    }
-
-    void InteractableCheck(RaycastHit hit)
-    {
-        if (hit.collider.CompareTag("ConstantInteract"))
+        else if (interactorImage.sprite != defaultIcon)
         {
-            if (Input.GetButton("Interact"))
-            {
-                Interactable interactableScript = hit.collider.GetComponent<Interactable>();
-
-                if (interactableScript != null)
-                {
-                    interactableScript.onInteract.Invoke();
-                }
-            }
+            interactorImage.sprite = defaultIcon;
         }
-        else if (Input.GetButtonDown("Interact"))
+
+        if (Input.GetButtonDown("Interact") && hit.collider)
         {
             Interactable interactableScript = hit.collider.GetComponent<Interactable>();
 
@@ -76,7 +34,5 @@ public class Interactor : MonoBehaviour
                 interactableScript.onInteract.Invoke();
             }
         }
-
-
     }
 }
