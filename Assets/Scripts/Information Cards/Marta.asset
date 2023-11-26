@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b720794858b89143bdfb7b8eef431e4, type: 3}
   m_Name: Marta
   m_EditorClassIdentifier: 
-  Name: 
-  Job: 
-  Description: 
+  Name: Marta
+  Job: Film Director
+  Description: She likes hangout with her friends
