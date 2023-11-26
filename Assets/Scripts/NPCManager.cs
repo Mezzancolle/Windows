@@ -8,9 +8,9 @@ public class NPCManager : MonoBehaviour
 {
     private int _enemiesKilled;
     private int _civiliansKilled;
-    private int _maxEnemiesKillable = 2;
-    private int _maxCivilianKillable = 2;
-    private float _countDownTimer = 5f;
+    private int _maxEnemiesKillable = 4;
+    private int _maxCivilianKillable = 3;
+    private float _countDownTimer = 120f;
 
     private void Update()
     {
