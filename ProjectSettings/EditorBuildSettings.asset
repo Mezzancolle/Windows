@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/NewOfficeRoom.unity
     guid: 388f32966c180f04f8e883e48eb11033
   - enabled: 1
-    path: Assets/Scenes/OutlineNPC.unity
-    guid: af2a723fc853c5e46845a78209aa47a1
-  - enabled: 1
-    path: Assets/Scenes/NPC Navmesh.unity
-    guid: 1e015283fc6612548aa2b0e2d48471b6
+    path: Assets/Scenes/EndingScene.unity
+    guid: 6dbbf6b3f4ee6294ebc2c22de4e07870
   m_configObjects: {}

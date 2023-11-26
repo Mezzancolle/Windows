@@ -6,18 +6,33 @@ using UnityEngine.SceneManagement;
 
 public class NPCManager : MonoBehaviour
 {
+    static public NPCManager Singleton;
+
     private int _enemiesKilled;
     private int _civiliansKilled;
     private int _maxEnemiesKillable = 4;
     private int _maxCivilianKillable = 3;
-    private float _countDownTimer = 120f;
+    private float _countDownTimer = 180f;
+    private float _countDownCounter;
+
+    private bool _isChangingScene;
+
+    private void Awake()
+    {
+        Singleton = this;
+    }
+
+    private void Start()
+    {
+        _countDownCounter = _countDownTimer;
+    }
 
     private void Update()
     {
-        _countDownTimer -= Time.deltaTime;
-        if (_countDownTimer <= 0)
+        _countDownCounter -= Time.deltaTime;
+        if (_countDownCounter <= 0)
         {
-            ResetScene();
+            ChangeScene(0);
         }
     }
 
@@ -27,7 +42,7 @@ public class NPCManager : MonoBehaviour
         Debug.Log("Nemici uccisi: " + _enemiesKilled);
         if (_enemiesKilled >= _maxEnemiesKillable)
         {
-            ChangeScene();
+            ChangeScene(2);
         }
     }
 
@@ -37,22 +52,23 @@ public class NPCManager : MonoBehaviour
         Debug.Log("Civili uccisi: " + _civiliansKilled);
         if (_civiliansKilled >= _maxCivilianKillable)
         {
-            ResetScene();
+            ChangeScene(0);
         }
     }
 
-    public void ChangeScene()
+    public void ChangeScene(int sceneIndex)
     {
-        SceneManager.LoadScene(2);
-    }
+        if (_isChangingScene) return;
 
-    public void ResetScene()
-    {
         _enemiesKilled = 0;
         _civiliansKilled = 0;
+        _countDownCounter = _countDownTimer;
 
-        string CurrentScene = SceneManager.GetActiveScene().name;
+        _isChangingScene = true;
 
-        SceneManager.LoadScene(CurrentScene);
+        SceneManager.LoadScene(sceneIndex);
+        enabled = false;
     }
+
+
 }

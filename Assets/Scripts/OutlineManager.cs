@@ -13,13 +13,10 @@ public class OutlineManager : MonoBehaviour
     [SerializeField]
     private bool Enemy;
 
-    static private NPCManager NPCManager;
 
     private void Start()
     {
         _originalMaterial = m_Renderer.material;
-
-        if(!NPCManager) NPCManager = FindObjectOfType<NPCManager>();
     }
 
     void OnMouseOver()
@@ -34,6 +31,7 @@ public class OutlineManager : MonoBehaviour
 
     private void OnMouseDown()
     {
+        NPCAudioSource.Singleton.PlayClickNPC();
         _popupMessage.SetActive(true);
     }
 
@@ -41,11 +39,11 @@ public class OutlineManager : MonoBehaviour
     {
         if (Enemy)
         {
-            NPCManager.IncrementKilledEnemies();
+            NPCManager.Singleton.IncrementKilledEnemies();
         }
         else
         {
-            NPCManager.IncrementKilledCivilians();
+            NPCManager.Singleton.IncrementKilledCivilians();
         }
     }
 }
