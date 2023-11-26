@@ -12,29 +12,14 @@ public class NPCManager : MonoBehaviour
     private int _civiliansKilled;
     private int _maxEnemiesKillable = 4;
     private int _maxCivilianKillable = 3;
-    private float _countDownTimer = 180f;
-    private float _countDownCounter;
 
     private bool _isChangingScene;
 
     private void Awake()
     {
         Singleton = this;
-    }
-
-    private void Start()
-    {
-        _countDownCounter = _countDownTimer;
-    }
-
-    private void Update()
-    {
-        _countDownCounter -= Time.deltaTime;
-        if (_countDownCounter <= 0)
-        {
-            ChangeScene(0);
-        }
-    }
+    } 
+    
 
     public void IncrementKilledEnemies()
     {
@@ -52,7 +37,7 @@ public class NPCManager : MonoBehaviour
         Debug.Log("Civili uccisi: " + _civiliansKilled);
         if (_civiliansKilled >= _maxCivilianKillable)
         {
-            ChangeScene(0);
+            ChangeScene(3);
         }
     }
 
@@ -62,7 +47,6 @@ public class NPCManager : MonoBehaviour
 
         _enemiesKilled = 0;
         _civiliansKilled = 0;
-        _countDownCounter = _countDownTimer;
 
         _isChangingScene = true;
 
