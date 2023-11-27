@@ -27,6 +27,13 @@ public class MainMenuManager : MonoBehaviour
         StartCoroutine(WaitOneSecondAndQuitGame());
     }
 
+    public void MainMenu()
+    {
+        _myAudioSource.Play();
+
+        StartCoroutine(WaitOneSecondAndMainMenu());
+    }
+
     IEnumerator WaitOneSecondAndQuitGame()
     {
         yield return new WaitForSeconds(1.0f);
@@ -42,5 +49,12 @@ public class MainMenuManager : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadScene(1);
+    }
+
+    IEnumerator WaitOneSecondAndMainMenu()
+    {
+        yield return new WaitForSeconds(1.0f);
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene(0);
     }
 }
