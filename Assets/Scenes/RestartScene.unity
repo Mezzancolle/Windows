@@ -4618,7 +4618,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: ac3b51f785cc20e4e9008277c888d95f, type: 2}
+  sharedProfile: {fileID: 11400000, guid: e0f6a19f83f895f4393ec4f1b7a61be4, type: 2}
 --- !u!4 &499684580
 Transform:
   m_ObjectHideFlags: 0
@@ -16969,7 +16969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.05490196}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

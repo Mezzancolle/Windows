@@ -231,6 +231,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MonitorWindows95
       objectReference: {fileID: 0}
+    - target: {fileID: 690410788292941353, guid: 4d3ff3ff4875c974499b470e9239ce99,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7350403640766042176, guid: 4d3ff3ff4875c974499b470e9239ce99,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5423,7 +5428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &482302657
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14520,12 +14525,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: fc2a55005b3f3384e8c6f6c198ae876d, type: 2}
+      objectReference: {fileID: 2100000, guid: a0bf989bc89e32c43bcf0dec792bfc11, type: 2}
     - target: {fileID: 1287724327028089133, guid: fc05cd8c3763fa3429c557726b2fb024,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: fc2a55005b3f3384e8c6f6c198ae876d, type: 2}
+      objectReference: {fileID: 2100000, guid: a0bf989bc89e32c43bcf0dec792bfc11, type: 2}
     - target: {fileID: 1331362142963507995, guid: fc05cd8c3763fa3429c557726b2fb024,
         type: 3}
       propertyPath: m_Name
@@ -27227,6 +27232,10 @@ PrefabInstance:
       value: Light_SuspendedStripLight_A (6)
       objectReference: {fileID: 0}
     - target: {fileID: 1642002852418864, guid: a12b534d6e16fde4c966e4680b4aaa4a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642002852418864, guid: a12b534d6e16fde4c966e4680b4aaa4a, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -27261,6 +27270,11 @@ PrefabInstance:
     - target: {fileID: 4750376110463618, guid: a12b534d6e16fde4c966e4680b4aaa4a, type: 3}
       propertyPath: m_LocalRotation.z
       value: 8.881783e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: 23518257031127620, guid: a12b534d6e16fde4c966e4680b4aaa4a,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 23518257031127620, guid: a12b534d6e16fde4c966e4680b4aaa4a,
         type: 3}
