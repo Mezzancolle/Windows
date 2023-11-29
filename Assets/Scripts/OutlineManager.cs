@@ -9,10 +9,9 @@ public class OutlineManager : MonoBehaviour
     [SerializeField]
     private Material _originalMaterial, _outlineColor;
     [SerializeField]
-    private GameObject _popupMessage;
+    private bool _isEnemy;
     [SerializeField]
-    private bool Enemy;
-
+    private InformationCard _myCard;
 
     private void Start()
     {
@@ -32,12 +31,13 @@ public class OutlineManager : MonoBehaviour
     private void OnMouseDown()
     {
         NPCAudioSource.Singleton.PlayClickNPC();
-        _popupMessage.SetActive(true);
+        InformationDisplay.Singleton.gameObject.SetActive(true);
+        InformationDisplay.Singleton.SetCard(_myCard, this.gameObject);
     }
 
     private void OnDestroy()
     {
-        if (Enemy)
+        if (_isEnemy)
         {
             NPCManager.Singleton.IncrementKilledEnemies();
         }

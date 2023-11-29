@@ -9,7 +9,7 @@ public class NPCAudioSource : MonoBehaviour
     private AudioSource myAudioSource;
     [SerializeField] 
     private AudioClip npcClick, npcDestroy, clickButton;
-    // Start is called before the first frame update
+
     void Awake()
     {
         Singleton = this;
